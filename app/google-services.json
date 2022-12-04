@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "945146403055",
+    "firebase_url": "",
+    "project_id": "portafogliomedico-5386e",
+    "storage_bucket": "portafogliomedico-5386e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945146403055:android:50c1cfeaf48146176a631a",
+        "android_client_info": {
+          "package_name": "com.example.portafgliomedico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945146403055-b0ateb90o7gji23l7hs7l2s2bl3fcg8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxB5O48GwztC99hkG_YATscoFP3qL5WMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945146403055-b0ateb90o7gji23l7hs7l2s2bl3fcg8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
