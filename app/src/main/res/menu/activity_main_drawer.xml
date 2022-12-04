@@ -16,9 +16,5 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_memos" />
-        <item
-            android:id="@+id/nav_test_database"
-            android:icon="@drawable/database_configuration_icon"
-            android:title="@string/menu_test_database" />
     </group>
 </menu>
