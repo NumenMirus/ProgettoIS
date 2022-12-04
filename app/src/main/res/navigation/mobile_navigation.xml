@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.portafgliomedico.ui.gallery.GalleryFragment"
+        android:name="com.example.portafgliomedico.ui.vault.VaultFragment"
         android:label="@string/menu_vault"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_vault" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.portafgliomedico.ui.slideshow.SlideshowFragment"
+        android:name="com.example.portafgliomedico.ui.memos.MemosFragment"
         android:label="@string/menu_memos"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_memos" />
 </navigation>

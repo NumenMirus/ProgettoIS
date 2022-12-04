@@ -24,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class HomeFragment extends Fragment {
@@ -46,7 +48,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view){
 
-                DocumentReference docRef = db.collection("pharmacy").document("2KDCqvQB8JW9FI9jNwLy");
+                /** CODE TO GET ONE SPEIFIC DOCUMENT
+                DocumentReference docRef = db.collection("pharmacy").document("xtycuvib");
                 docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -54,6 +57,7 @@ public class HomeFragment extends Fragment {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                binding.textHome.setText(document.getData().toString());
                             } else {
                                 Log.d(TAG, "No such document");
                             }
@@ -61,7 +65,24 @@ public class HomeFragment extends Fragment {
                             Log.d(TAG, "get failed with ", task.getException());
                         }
                     }
-                });
+                }); **/
+
+                db.collection("pharmacy")
+                        // .whereEqualTo("capital", true) OPTIONAL FILTER QUERY
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Log.d(TAG, document.getId() + " => " + document.getData());
+                                        binding.textHome.setText(new Integer(document.getData().size()).toString() + " elementi presenti");
+                                    }
+                                } else {
+                                    Log.d(TAG, "Error getting documents: ", task.getException());
+                                }
+                            }
+                        });
             }
         });
 

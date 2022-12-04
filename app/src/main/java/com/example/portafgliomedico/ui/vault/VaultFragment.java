@@ -1,4 +1,4 @@
-package com.example.portafgliomedico.ui.gallery;
+package com.example.portafgliomedico.ui.vault;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.portafgliomedico.databinding.FragmentGalleryBinding;
+import com.example.portafgliomedico.databinding.FragmentVaultBinding;
 
-public class GalleryFragment extends Fragment {
+public class VaultFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentVaultBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        VaultViewModel galleryViewModel =
+                new ViewModelProvider(this).get(VaultViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentVaultBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textGallery;
