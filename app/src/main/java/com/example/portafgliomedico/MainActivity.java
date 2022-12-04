@@ -1,10 +1,13 @@
 package com.example.portafgliomedico;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.portafgliomedico.databinding.ActivityMainBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
