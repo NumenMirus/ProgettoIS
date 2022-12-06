@@ -60,18 +60,19 @@ public class HomeFragment extends Fragment {
                     }
                 }); **/
 
-                db.collection("pharmacy")
+                db.collection("one")
                         // .whereEqualTo("capital", true) OPTIONAL FILTER QUERY
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
-                                    String text = new String();
+                                    String text = "";
                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                         Log.d(TAG, document.getId() + " => " + document.getData());
                                         text += document.getString("nome") +" | ";
                                     }
+                                    Log.d(TAG, "onComplete: "+text);
                                     binding.textHome.setText("Elementi: " + text);
                                 } else {
                                     Log.d(TAG, "Error getting documents: ", task.getException());
@@ -89,4 +90,6 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 }

@@ -55,7 +55,7 @@ public class MemosFragment extends Fragment {
                     pharmacy.put("nome", nome);
                     Log.d(TAG, "onClick: Created Map Object");
 
-                    db.collection("pharmacy").document()
+                    db.collection("one").document()
                             .set(pharmacy)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
