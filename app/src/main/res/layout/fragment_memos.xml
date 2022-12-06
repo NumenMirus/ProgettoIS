@@ -7,17 +7,6 @@
     tools:context=".ui.memos.MemosFragment">
 
     <EditText
-        android:id="@+id/editTextOpen"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:hint="Aperto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-    <EditText
         android:id="@+id/editTextName"
         android:layout_width="300dp"
         android:layout_height="70dp"
@@ -55,4 +44,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_slideshow"
         app:layout_constraintVertical_bias="0.172" />
+
+    <Switch
+        android:id="@+id/switchAperto"
+        android:layout_width="158dp"
+        android:layout_height="31dp"
+        android:text="Aperto"
+        app:layout_constraintBottom_toTopOf="@+id/text_slideshow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintVertical_bias="0.2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

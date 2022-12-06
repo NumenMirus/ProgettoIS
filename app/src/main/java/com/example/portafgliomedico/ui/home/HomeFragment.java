@@ -16,13 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.portafgliomedico.databinding.FragmentHomeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -74,10 +67,12 @@ public class HomeFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
+                                    String text = new String();
                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                         Log.d(TAG, document.getId() + " => " + document.getData());
-                                        binding.textHome.setText(new Integer(document.getData().size()).toString() + " elementi presenti");
+                                        text += document.getString("nome") +" | ";
                                     }
+                                    binding.textHome.setText("Elementi: " + text);
                                 } else {
                                     Log.d(TAG, "Error getting documents: ", task.getException());
                                 }

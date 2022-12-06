@@ -40,31 +40,46 @@ public class MemosFragment extends Fragment {
         binding.addToDatabaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Map<String, Object> pharmacy = new HashMap<>();
+                // Get data from Editfields
                 String nome = new String(binding.editTextName.getText().toString());
-                Boolean aperto = new Boolean(binding.editTextOpen.getText().toString());
-                pharmacy.put("aperto", aperto);
-                pharmacy.put("nome", nome);
+                Boolean aperto = new Boolean(binding.switchAperto.isChecked());
+                Log.d(TAG, "nomeValue.isEmpty(): "+ nome.isEmpty());
+                Log.d(TAG, "apertoValue: "+ aperto);
 
-                db.collection("pharmacy").document()
-                        .set(pharmacy)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "DocumentSnapshot successfully written!");
-                                binding.textSlideshow.setText("DocumentSnapshot successfully written!");
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error writing document", e);
-                                binding.textSlideshow.setText("Error writing document");
-                            }
-                        });
+                if(!nome.isEmpty()){
+                    // Creates a map object to be stored in the database
+                    Map<String, Object> pharmacy = new HashMap<>();
+
+                    // Populate map fields
+                    pharmacy.put("aperto", aperto);
+                    pharmacy.put("nome", nome);
+                    Log.d(TAG, "onClick: Created Map Object");
+
+                    db.collection("pharmacy").document()
+                            .set(pharmacy)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "DocumentSnapshot successfully written!");
+                                    binding.textSlideshow.setText("DocumentSnapshot successfully written!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "Error writing document", e);
+                                    binding.textSlideshow.setText("Error writing document");
+                                }
+                    });
+                    
+                    binding.editTextName.setText("");
+                    binding.switchAperto.setChecked(false);
+                    
+                }else{
+                    Log.d(TAG, "onClick: Empty fields, nothing to push to database");
+                }
             }
         });
-
 
         return root;
     }
