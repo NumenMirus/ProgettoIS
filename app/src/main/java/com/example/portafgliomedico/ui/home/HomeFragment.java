@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view){
 
-                /** CODE TO GET ONE SPEIFIC DOCUMENT
+                /** CODE TO GET ONE SPECIFIC DOCUMENT
                 DocumentReference docRef = db.collection("pharmacy").document("xtycuvib");
                 docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
