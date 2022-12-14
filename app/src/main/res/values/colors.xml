@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blueSplash">#0ED2F7</color>
+    <color name = "primary">#1B023B</color>
+    <color name = "secondary">#FF03DAC5</color>
+    <color name="modalità_notte">#6124B1</color>
+    <color name="notifiche">#13B2C3</color>
+    <color name="cambia_PIN">#E6A326</color>
 </resources>
