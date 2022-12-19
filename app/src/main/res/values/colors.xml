@@ -13,4 +13,16 @@
     <color name="modalità_notte">#6124B1</color>
     <color name="notifiche">#13B2C3</color>
     <color name="cambia_PIN">#E6A326</color>
+
+
+    <!--Nav Bar -->
+    <color name="home">#1194AA</color>
+    <color name="search">#C9379D</color>
+    <color name="notification">#AE7E0F</color>
+    <color name="account">#5B37B7</color>
+
+    <color name="home_20">#331194AA</color>
+    <color name="search_20">#33C9379D</color>
+    <color name="notification_20">#33AE7E0F</color>
+    <color name="account_20">#335B37B7</color>
 </resources>
