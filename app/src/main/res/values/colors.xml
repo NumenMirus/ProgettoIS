@@ -11,8 +11,9 @@
     <color name = "primary">#1B023B</color>
     <color name = "secondary">#FF03DAC5</color>
     <color name="modalità_notte">#6124B1</color>
-    <color name="notifiche">#13B2C3</color>
+    <color name="notifiche">#F60000</color>
     <color name="cambia_PIN">#E6A326</color>
+    <color name="RED">#13B2C3</color>13B2C3
 
 
     <!--Nav Bar -->
