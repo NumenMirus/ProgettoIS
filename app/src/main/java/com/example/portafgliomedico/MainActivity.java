@@ -1,10 +1,13 @@
 package com.example.portafgliomedico;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
@@ -18,6 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     //number of select tab. We have 4 tabs so value must lie between 1-4 default value is 1
     private int selectedTab = 1;
@@ -132,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     accountTxt.setVisibility(View.GONE);
 
 
-                    homeImage.setImageResource(R.drawable.search_icon_nav_bar);
+                    homeImage.setImageResource(R.drawable.home_icon_nav_bar);
                     notificationImage.setImageResource(R.drawable.notification_icon_nav_bar);
                     accountImage.setImageResource(R.drawable.account_icon_navbar);
 
@@ -140,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     notificationLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     accountLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-                    //select home tab
+                    //select search tab
                     searchTxt.setVisibility(View.VISIBLE);
                     searchImage.setImageResource(R.drawable.search_selected_icon);
                     likeLayout.setBackgroundResource(R.drawable.round_back_search_100);
@@ -277,6 +283,7 @@ public class MainActivity extends AppCompatActivity {
         */
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

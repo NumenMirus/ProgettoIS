@@ -25,4 +25,8 @@
     <color name="search_20">#33C9379D</color>
     <color name="notification_20">#33AE7E0F</color>
     <color name="account_20">#335B37B7</color>
+
+    <!--Dashboard UI -->
+    <color name="background_color">@android:color/white</color>
+    <color name="background_color_50">#B3FFFFFF</color>
 </resources>
