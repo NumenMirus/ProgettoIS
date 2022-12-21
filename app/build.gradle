@@ -50,5 +50,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     //blur librery
-    //implementation 'com.eightbilab:blurview:1.6.6'
+    implementation 'com.eightbilab:blurview:1.6.6'
 }
