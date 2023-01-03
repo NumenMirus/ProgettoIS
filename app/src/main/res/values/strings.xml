@@ -15,4 +15,9 @@
     <string name="addToDatabaseButton">Add</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_string">"Bentornato, "</string>
+    <string name="book_medicine_label">Ordina medicine</string>
+    <string name="vault_label">Cassaforte</string>
+    <string name="memo_label">Promemoria</string>
+    <string name="search_label">Cerca</string>
 </resources>
