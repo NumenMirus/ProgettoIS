@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final LinearLayout homeLayout = findViewById(R.id.homeLayout);
-        final LinearLayout likeLayout = findViewById(R.id.searchLayout);
+        final LinearLayout searchLayout = findViewById(R.id.searchLayout);
         final LinearLayout notificationLayout = findViewById(R.id.notificationLayout);
         final LinearLayout accountLayout = findViewById(R.id.accountLayout);
 
@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
                     accountTxt.setVisibility(View.GONE);
 
 
-                    searchImage.setImageResource(R.drawable.search_icon_nav_bar);
+                    searchImage.setImageResource(R.drawable.pharmacy_icon);
                     notificationImage.setImageResource(R.drawable.notification_icon_nav_bar);
                     accountImage.setImageResource(R.drawable.account_icon_navbar);
 
-                    likeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    searchLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     notificationLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     accountLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -103,49 +103,46 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        likeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        searchLayout.setOnClickListener(view -> {
 
-                //check if search is already selected or not
-                if(selectedTab != 2){
+            //check if search is already selected or not
+            if(selectedTab != 2){
 
-                    //set search fragment
-                    getSupportFragmentManager().beginTransaction()
-                            .setReorderingAllowed(true)
-                            .replace(R.id.fragmentContainer, SearchFragments.class,null)
-                            .commit();
+                //set search fragment
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .replace(R.id.fragmentContainer, SearchFragments.class,null)
+                        .commit();
 
-                    //unselect other tabs expect home tab
-                    homeTxt.setVisibility(View.GONE);
-                    notificationTxt.setVisibility(View.GONE);
-                    accountTxt.setVisibility(View.GONE);
+                //unselect other tabs expect home tab
+                homeTxt.setVisibility(View.GONE);
+                notificationTxt.setVisibility(View.GONE);
+                accountTxt.setVisibility(View.GONE);
 
 
-                    homeImage.setImageResource(R.drawable.home_icon_nav_bar);
-                    notificationImage.setImageResource(R.drawable.notification_icon_nav_bar);
-                    accountImage.setImageResource(R.drawable.account_icon_navbar);
+                homeImage.setImageResource(R.drawable.home_selected_icon);
+                notificationImage.setImageResource(R.drawable.notification_icon_nav_bar);
+                accountImage.setImageResource(R.drawable.account_icon_navbar);
 
-                    homeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    notificationLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    accountLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                homeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                notificationLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                accountLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-                    //select search tab
-                    searchTxt.setVisibility(View.VISIBLE);
-                    searchImage.setImageResource(R.drawable.search_selected_icon);
-                    likeLayout.setBackgroundResource(R.drawable.round_back_search_100);
+                //select search tab
+                searchTxt.setVisibility(View.VISIBLE);
+                searchImage.setImageResource(R.drawable.pharmacy_icon);
+                searchLayout.setBackgroundResource(R.drawable.round_back_search_100);
 
-                    //create animation
-                    ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, Animation.RELATIVE_TO_SELF,1.0f,Animation.RELATIVE_TO_SELF,0.0f);
-                    scaleAnimation.setDuration(200);
-                    scaleAnimation.setFillAfter(true);
-                    likeLayout.startAnimation(scaleAnimation);
+                //create animation
+                ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, Animation.RELATIVE_TO_SELF,1.0f,Animation.RELATIVE_TO_SELF,0.0f);
+                scaleAnimation.setDuration(200);
+                scaleAnimation.setFillAfter(true);
+                searchLayout.startAnimation(scaleAnimation);
 
-                    //set 2st tab as selected tab
-                    selectedTab = 2;
-                }
-
+                //set 2st tab as selected tab
+                selectedTab = 2;
             }
+
         });
 
 
@@ -169,11 +166,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                     homeImage.setImageResource(R.drawable.home_icon_nav_bar);
-                    searchImage.setImageResource(R.drawable.search_icon_nav_bar);
+                    searchImage.setImageResource(R.drawable.pharmacy_icon);
                     accountImage.setImageResource(R.drawable.account_icon_navbar);
 
                     homeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    likeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    searchLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     accountLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
                     //select home tab
@@ -214,11 +211,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                     homeImage.setImageResource(R.drawable.home_icon_nav_bar);
-                    searchImage.setImageResource(R.drawable.search_icon_nav_bar);
+                    searchImage.setImageResource(R.drawable.pharmacy_icon);
                     notificationImage.setImageResource(R.drawable.notification_icon_nav_bar);
 
                     homeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    likeLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    searchLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     notificationLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
                     //select home tab
