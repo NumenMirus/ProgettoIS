@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
+/**
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
                             Log.d(TAG, "get failed with ", task.getException());
                         }
                     }
-                }); **/
+                });
 
                 db.collection("one")
                         // .whereEqualTo("capital", true) OPTIONAL FILTER QUERY
@@ -92,4 +92,4 @@ public class HomeFragment extends Fragment {
     }
 
 
-}
+} **/

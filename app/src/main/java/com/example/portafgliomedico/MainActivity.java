@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     //number of select tab. We have 4 tabs so value must lie between 1-4 default value is 1
     private int selectedTab = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
