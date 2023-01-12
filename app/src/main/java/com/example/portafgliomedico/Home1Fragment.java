@@ -1,17 +1,20 @@
 package com.example.portafgliomedico;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
 import com.example.portafgliomedico.ui.memos.MemosFragment;
 import com.example.portafgliomedico.ui.vault.VaultFragment;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +53,7 @@ public class Home1Fragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -70,6 +74,7 @@ public class Home1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         ImageButton btnMemo = (ImageButton)view.findViewById(R.id.widget_memo);
         ImageButton btnSearch = (ImageButton)view.findViewById(R.id.widget_search);
@@ -103,8 +108,6 @@ public class Home1Fragment extends Fragment {
                 fr.commit();
             }
         });
-
-
 
         return view;
     }

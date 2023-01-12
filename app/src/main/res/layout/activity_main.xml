@@ -83,7 +83,10 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/search_selected_icon"/>
+                android:contentDescription="@string/search_label"
+                android:src="@drawable/search_selected_icon"
+                app:srcCompat="@drawable/pharmacy_icon"
+                tools:srcCompat="@drawable/pharmacy_icon" />
 
             <TextView
                 android:id="@+id/searchTxt"

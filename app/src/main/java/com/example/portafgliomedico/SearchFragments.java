@@ -1,11 +1,14 @@
 package com.example.portafgliomedico;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,9 +75,10 @@ public class SearchFragments extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                //intent.setData(Uri.parse("geo:47.4925,19.0513")); riga probabilmente da eliminare lasciare per il momento
+                intent.setData(Uri.parse("geo:42.4925,19.0513")); // riga probabilmente da eliminare lasciare per il momento
                 intent.setPackage("com.google.android.apps.maps");
                 Intent chooser = Intent.createChooser(intent, "Launch Maps");
+                Log.d(TAG, "onClick: "+chooser.toString());
                 startActivity(chooser);
             }
         });
