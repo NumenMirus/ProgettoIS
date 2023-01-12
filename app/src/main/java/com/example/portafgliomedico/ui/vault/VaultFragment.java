@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.portafgliomedico.databinding.FragmentVaultBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VaultFragment extends Fragment {
 
     private FragmentVaultBinding binding;
+    FloatingActionButton floatingActionButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class VaultFragment extends Fragment {
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
+
 
     @Override
     public void onDestroyView() {

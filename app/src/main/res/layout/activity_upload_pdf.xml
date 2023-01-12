@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4C4A4A"
+    tools:context=".UploadPDF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload PDF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#FF9800"
+        android:id="@+id/text_pdf"
+    />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/text_pdf"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#FFFFFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape"
+            android:hint="Enter PDF File Name"
+            android:textColor="#FF9800"
+            android:textColorHint="@color/black"
+            android:textSize="22sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="90dp"
+        android:backgroundTint="@color/black"
+        android:text="Upload PDF"
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:id="@+id/upload_btn"
+        android:padding="10dp"/>
+
+</RelativeLayout>
