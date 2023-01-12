@@ -1,5 +1,7 @@
 package com.example.portafgliomedico;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +17,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SearchFragments extends Fragment {
-
+    private Button launch_button;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,5 +63,20 @@ public class SearchFragments extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        launch_button = getView().findViewById(R.id.search);
+        launch_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                //intent.setData(Uri.parse("geo:47.4925,19.0513")); riga probabilmente da eliminare lasciare per il momento
+                intent.setPackage("com.google.android.apps.maps");
+                Intent chooser = Intent.createChooser(intent, "Launch Maps");
+                startActivity(chooser);
+            }
+        });
     }
 }
