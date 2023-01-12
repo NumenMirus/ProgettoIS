@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:376437778917:android:abfbc3fa9b6e136ca5a70c",
+        "android_client_info": {
+          "package_name": "com.example.portafgliomedico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376437778917-v7ql4r1huk1het1uki4vhrcb01f7kvg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxluGPIJVfMBz5KoV3-Vt823AIhdsQRKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376437778917-v7ql4r1huk1het1uki4vhrcb01f7kvg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:376437778917:android:4b0ec1d8ab266774a5a70c",
         "android_client_info": {
           "package_name": "com.portfgliomedico"
