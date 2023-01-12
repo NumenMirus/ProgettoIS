@@ -20,4 +20,9 @@
     <string name="vault_label">Cassaforte</string>
     <string name="memo_label">Promemoria</string>
     <string name="search_label">Cerca</string>
+    <string name="settings_string">Impostazioni</string>
+    <string name="modify_account_label">Modifica profilo</string>
+    <string name="night_mode_label">Modalità Notte</string>
+    <string name="notifications_label">Notifiche</string>
+    <string name="change_pin_label">Cambia Pin</string>
 </resources>
