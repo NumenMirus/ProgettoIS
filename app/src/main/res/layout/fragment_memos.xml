@@ -8,11 +8,21 @@
     tools:context=".ui.memos.MemosFragment">
 
     <EditText
+        android:id="@+id/editTextName2"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:hint="Data di scadenza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
         android:id="@+id/editTextName"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="56dp"
-        android:hint="Name"
+        android:hint="Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,16 +56,16 @@
         app:layout_constraintTop_toBottomOf="@+id/text_slideshow"
         app:layout_constraintVertical_bias="0.172" />
 
-    <Switch
-        android:id="@+id/switchAperto"
-        android:layout_width="158dp"
-        android:layout_height="31dp"
-        android:text="Aperto"
-        app:layout_constraintBottom_toTopOf="@+id/text_slideshow"
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="132dp"
+        android:layout_height="45dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/addToDatabaseButton"
+        app:layout_constraintVertical_bias="0.51" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

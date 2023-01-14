@@ -2,6 +2,7 @@ package com.example.portafgliomedico;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.example.portafgliomedico.ui.memos.MemoActivity;
 import com.example.portafgliomedico.ui.memos.MemosFragment;
 import com.example.portafgliomedico.ui.vault.VaultFragment;
 
@@ -85,9 +88,8 @@ public class Home1Fragment extends Fragment {
         btnMemo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragmentContainer,new MemosFragment());
-                fr.commit();
+                Intent i = new Intent(getActivity(), MemoActivity.class);
+                startActivity(i);
             }
         });
 
