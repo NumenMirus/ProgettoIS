@@ -82,7 +82,7 @@ public class Home1Fragment extends Fragment {
         ImageButton btnMemo = (ImageButton)view.findViewById(R.id.widget_memo);
         ImageButton btnSearch = (ImageButton)view.findViewById(R.id.widget_search);
         ImageButton btnVault = (ImageButton)view.findViewById(R.id.widget_vault);
-        //ImageButton btnOrderMed = (ImageButton)view.findViewById(R.id.widget_order);
+        ImageButton btnOrderMed = (ImageButton)view.findViewById(R.id.widget_order);
 
 
         btnMemo.setOnClickListener(new View.OnClickListener(){
@@ -107,6 +107,15 @@ public class Home1Fragment extends Fragment {
             public void onClick(View v){
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragmentContainer,new VaultFragment());
+                fr.commit();
+            }
+        });
+
+        btnOrderMed.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragmentContainer,new OrderMediceFragment());
                 fr.commit();
             }
         });
