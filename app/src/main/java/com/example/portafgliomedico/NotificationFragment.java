@@ -1,5 +1,6 @@
 package com.example.portafgliomedico;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.portafgliomedico.ui.DBmanager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,38 @@ public class NotificationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+
+        final Button refreshButton = view.findViewById(R.id.refreshButton);
+        final Button deleteButton = view.findViewById(R.id.deleteButton);
+        DBmanager db = new DBmanager(getActivity());
+        final TextView listview = view.findViewById(R.id.listTextView);
+
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listview.setText("Testo refreshed");
+                Cursor res = db.getMemo();
+                if(res.getCount()==0) {
+                    listview.setText("No memos!");
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while (res.moveToNext()){
+                    buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(2)).append("\n");
+                }
+                listview.setText(buffer);
+            }
+        });
+
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteMemo();
+            }
+        });
+
+        return view;
     }
 }

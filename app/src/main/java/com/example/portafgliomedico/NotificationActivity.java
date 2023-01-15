@@ -18,24 +18,5 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_notification);
 
-        final Button refreshButton = findViewById(R.id.refreshButton);
-        final TextView listview = findViewById(R.id.listTextView);
-        DBmanager db = new DBmanager(this);
-
-        refreshButton.setOnClickListener(v -> {
-            listview.setText("Testo reefreshed");
-            Cursor res = db.getMemo();
-            if(res.getCount()==0) {
-                listview.setText("No memos!");
-                return;
-            }
-            StringBuffer buffer = new StringBuffer();
-            while (res.moveToNext()){
-                buffer.append("->  ").append(res.getString(0)).append(". Due date: ").append(res.getString(1)).append("\n");
-            }
-            listview.setText(buffer);
-            Log.d(TAG, "onClick: refreshed 2");
-        });
-
     }
 }

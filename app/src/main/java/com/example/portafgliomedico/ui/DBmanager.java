@@ -34,6 +34,8 @@ public class DBmanager extends SQLiteOpenHelper {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
 
+        Log.d(TAG, "insertMemo: Inserting 1");
+        
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("text", text);
@@ -56,6 +58,21 @@ public class DBmanager extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from memo;", null);
         Log.d(TAG, "getMemo: "+cursor.toString());
         return cursor;
+    }
+
+    public Boolean deleteMemo(){
+        Log.d(TAG, "deleteMemo: Deleting 1");
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        long result = db.delete("memo", null, null);
+        if(result == -1){
+            Log.d(TAG, "deleteMemo: False");
+            return false;
+        }else{
+            Log.d(TAG, "deleteMemo: True - "+result);
+            return true;
+        }
     }
 }
 
