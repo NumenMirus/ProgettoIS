@@ -101,7 +101,7 @@ public class NotificationFragment extends Fragment {
         }
         StringBuffer buffer = new StringBuffer();
         while (res.moveToNext()){
-            buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(2)).append("\n");
+            buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(0)).append("\n");
         }
         listview.setText(buffer);
     }

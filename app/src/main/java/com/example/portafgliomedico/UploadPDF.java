@@ -30,8 +30,10 @@ public class UploadPDF extends AppCompatActivity {
     Button upload_btn;
     EditText pdf_name;
 
-    StorageReference storageReference;
-    DatabaseReference databaseReference;
+    //Database
+    FirebaseStorage storage = FirebaseStorage.getInstance("gs://portafogliomedico-a055e.appspot.com/");
+    StorageReference storageRef = storage.getReference();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +43,7 @@ public class UploadPDF extends AppCompatActivity {
         upload_btn=findViewById(R.id.upload_btn);
         pdf_name=findViewById(R.id.name);
 
-        //Database
-        storageReference= FirebaseStorage.getInstance().getReference();
-        databaseReference= FirebaseDatabase.getInstance().getReference("Uploads");
-
-        upload_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                selectFiles();
-
-            }
-        });
+        upload_btn.setOnClickListener(view -> selectFiles());
     }
 
     private void selectFiles() {
@@ -75,29 +67,18 @@ public class UploadPDF extends AppCompatActivity {
         progressDialog.setTitle("Uploading...");
         progressDialog.show();
 
-        StorageReference reference=storageReference.child("Uploads/"+System.currentTimeMillis()+".pdf");
-        reference.putFile(data).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+        StorageReference reference = storageRef.child("/"+System.currentTimeMillis()+".pdf");
+        reference.putFile(data).addOnSuccessListener(taskSnapshot -> {
 
-                Task<Uri> uriTask=taskSnapshot.getStorage().getDownloadUrl();
-                while(!uriTask.isComplete()){
-                    Uri url = uriTask.getResult();
-
-                    pdfClass pdfClass = new pdfClass(pdf_name.getText().toString(),url.toString());
-                    databaseReference.child(databaseReference.push().getKey()).setValue(pdfClass);
-
-                    Toast.makeText(UploadPDF.this, "File Uploaded!", Toast.LENGTH_LONG).show();
-                    progressDialog.dismiss();
-                }
-
+            Task<Uri> uriTask=taskSnapshot.getStorage().getDownloadUrl();
+            while(!uriTask.isComplete()){
+                Toast.makeText(UploadPDF.this, "File Uploaded!", Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
             }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                double progress = (100.0*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
-                progressDialog.setMessage("Uploaded:"+(int)progress+"%");
-            }
+
+        }).addOnProgressListener(snapshot -> {
+            double progress = (100.0*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+            progressDialog.setMessage("Uploaded:"+(int)progress+"%");
         });
     }
 }

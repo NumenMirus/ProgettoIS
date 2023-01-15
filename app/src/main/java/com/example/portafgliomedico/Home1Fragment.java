@@ -105,9 +105,8 @@ public class Home1Fragment extends Fragment {
         btnVault.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragmentContainer,new VaultFragment());
-                fr.commit();
+                Intent i = new Intent(getActivity(), UploadPDF.class);
+                startActivity(i);
             }
         });
 
