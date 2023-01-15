@@ -25,4 +25,5 @@
     <string name="night_mode_label">Modalità Notte</string>
     <string name="notifications_label">Notifiche</string>
     <string name="change_pin_label">Cambia Pin</string>
+    <string name="prenota">Prenota</string>
 </resources>

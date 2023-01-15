@@ -23,8 +23,8 @@ public class MemoActivity extends AppCompatActivity {
          setContentView(R.layout.fragment_memos);
          Log.d(TAG, "onCreate: Created");
 
-         final EditText text = findViewById(R.id.editTextName);
-         final EditText due_date = findViewById(R.id.editTextName2);
+         final EditText text = findViewById(R.id.nomeMedicale);
+         final EditText due_date = findViewById(R.id.dataTime);
          final Button addButton = findViewById(R.id.addToDatabaseButton);
          final Button backButton = findViewById(R.id.backButton);
          final TextView textView = findViewById(R.id.text_slideshow);

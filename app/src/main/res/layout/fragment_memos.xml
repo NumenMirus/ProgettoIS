@@ -8,17 +8,17 @@
     tools:context=".ui.memos.MemosFragment">
 
     <EditText
-        android:id="@+id/editTextName2"
+        android:id="@+id/dataTime"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Data di scadenza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeMedicale" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/nomeMedicale"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="56dp"
