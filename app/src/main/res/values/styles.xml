@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="blue_text" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:textStyle">italic</item>
+        <item name="android:colorPrimary">#000000</item>
+    </style>
+</resources>
