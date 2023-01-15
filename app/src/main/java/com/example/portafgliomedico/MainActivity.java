@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     //number of select tab. We have 4 tabs so value must lie between 1-4 default value is 1
     private int selectedTab = 1;
     private String text_welcome;
-    TextView welcome = findViewById(R.id.welcome_string_home);
 
 
     @Override
@@ -79,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("firstTime", false);
             editor.commit();
         }
-
-        welcome.setText(text_welcome);
 
         final LinearLayout homeLayout = findViewById(R.id.homeLayout);
         final LinearLayout searchLayout = findViewById(R.id.searchLayout);
