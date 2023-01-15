@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.portafgliomedico.ui.DBmanager;
@@ -71,20 +72,12 @@ public class NotificationFragment extends Fragment {
         DBmanager db = new DBmanager(getActivity());
         final TextView listview = view.findViewById(R.id.listTextView);
 
+        refreshList(listview, db);
+
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listview.setText("Testo refreshed");
-                Cursor res = db.getMemo();
-                if(res.getCount()==0) {
-                    listview.setText("No memos!");
-                    return;
-                }
-                StringBuffer buffer = new StringBuffer();
-                while (res.moveToNext()){
-                    buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(2)).append("\n");
-                }
-                listview.setText(buffer);
+                refreshList(listview, db);
             }
         });
 
@@ -97,5 +90,19 @@ public class NotificationFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void refreshList(TextView listview, DBmanager db){
+        listview.setText("Testo refreshed");
+        Cursor res = db.getMemo();
+        if(res.getCount()==0) {
+            listview.setText("No memos!");
+            return;
+        }
+        StringBuffer buffer = new StringBuffer();
+        while (res.moveToNext()){
+            buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(2)).append("\n");
+        }
+        listview.setText(buffer);
     }
 }
