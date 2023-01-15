@@ -10,7 +10,7 @@ public class MemosViewModel extends ViewModel {
 
     public MemosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {
