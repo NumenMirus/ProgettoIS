@@ -15,6 +15,7 @@
     <color name="modalità_notte">#6124B1</color>
     <color name="notifiche">#F60000</color>
     <color name="cambia_PIN">#E6A326</color>
+    <color name="grey">#626164</color>
 
     <!--Nav Bar -->
     <color name="home">#1194AA</color>

@@ -24,29 +24,32 @@
 
         <Button
             android:id="@+id/doge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:text="Farmacia Al Doge"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
         <Button
             android:id="@+id/ca_rossa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:text="Farmacia Ca' Rossa"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/doge" />
 
         <Button
             android:id="@+id/centrale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
             android:layout_marginTop="30dp"
+            android:textColor="@color/grey"
             android:text="Farmacia Centrale"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +57,10 @@
 
         <Button
             android:id="@+id/internazionale_salute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
             android:layout_marginTop="30dp"
+            android:textColor="@color/grey"
             android:text="Farmacia Internazionale alla Salute"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +68,9 @@
 
         <Button
             android:id="@+id/menis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:textColor="@color/grey"
             android:layout_marginTop="30dp"
             android:text="Farmacia Menis"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,9 +79,10 @@
 
         <Button
             android:id="@+id/zamparo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
             android:layout_marginTop="30dp"
+            android:textColor="@color/grey"
             android:text="Farmacia Zamparo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
