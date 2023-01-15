@@ -71,7 +71,7 @@ public class SearchFragments extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
-        //primo bottone
+        //First Button
         doge = getView().findViewById(R.id.doge);
         doge.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -17,8 +17,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModel;
+
+import com.example.portafgliomedico.ui.DBmanager;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,7 +38,6 @@ public class OrderMediceFragment extends Fragment {
     Button prenotaBtn;
     int tvHour,tvMinute;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +51,29 @@ public class OrderMediceFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_ordermed, container, false);
 
+
+
+
+
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
         nameMed = view.findViewById(R.id.nomeMedicale);
-        String text = nameMed.getText().toString();
+
+
+        phoneNumber = view.findViewById(R.id.telefonoFarmacia);
+
 
 
         // Initialize the view state, such as setting text on a TextView
         selectTime = view.findViewById(R.id.selezionaOra);
+
         selectTime.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -136,6 +157,16 @@ public class OrderMediceFragment extends Fragment {
         ) {
             @Override
             public void onClick(View view) {
+                String time = selectTime.getText().toString();String number = phoneNumber.getText().toString();
+                String medicine = nameMed.getText().toString(); System.out.println("medicine ::  " + medicine);
+
+                String memoText = medicine + " " + time + " " + number;
+                String memoDueDate = String.valueOf(selectDate.getText());
+
+                DBmanager db = new DBmanager(getActivity());
+                db.insertMemo(memoText, memoDueDate);
+
+
                 // Navigate to the home page
                 Fragment homeFragment = new Home1Fragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -158,11 +189,7 @@ public class OrderMediceFragment extends Fragment {
             }
         });
 
-        phoneNumber = view.findViewById(R.id.telefonoFarmacia);
-        String text1 = phoneNumber.getText().toString();
 
-        return view;
     }
-
 }
 
