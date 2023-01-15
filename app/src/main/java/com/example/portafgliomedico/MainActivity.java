@@ -1,9 +1,13 @@
 package com.example.portafgliomedico;
 
+import static android.content.ContentValues.TAG;
+
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.animation.Animation;
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     //number of select tab. We have 4 tabs so value must lie between 1-4 default value is 1
     private int selectedTab = 1;
+    private String text_welcome;
+    TextView welcome = findViewById(R.id.welcome_string_home);
 
 
     @Override
@@ -40,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
         if(prefs.getBoolean("firstTime", true)) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this,R.style.blue_text);
 
@@ -51,9 +58,13 @@ public class MainActivity extends AppCompatActivity {
             alert.setView(input);
 
             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @SuppressLint("SetTextI18n")
                 public void onClick(DialogInterface dialog, int whichButton) {
                     String value = String.valueOf(input.getText());
-
+                    TextView welcome = findViewById(R.id.welcome_string_home);
+                    text_welcome = "Bentornato, "+value;
+                    Log.d(TAG, "onClick: "+text_welcome);
+                    welcome.setText(text_welcome);
                 }
             });
 
@@ -68,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("firstTime", false);
             editor.commit();
         }
+
+        welcome.setText(text_welcome);
+
         final LinearLayout homeLayout = findViewById(R.id.homeLayout);
         final LinearLayout searchLayout = findViewById(R.id.searchLayout);
         final LinearLayout notificationLayout = findViewById(R.id.notificationLayout);
