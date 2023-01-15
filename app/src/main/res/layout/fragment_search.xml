@@ -27,7 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:width="300dp"
             android:text="Farmacia Al Doge"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -36,9 +38,12 @@
             android:id="@+id/ca_rossa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="4dp"
+            android:width="300dp"
             android:text="Farmacia Ca' Rossa"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/doge" />
 
@@ -46,19 +51,25 @@
             android:id="@+id/centrale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="8dp"
+            android:width="300dp"
             android:text="Farmacia Centrale"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ca_rossa" />
 
         <Button
             android:id="@+id/internazionale_salute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_width="294dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="4dp"
+            android:width="300dp"
             android:text="Farmacia Internazionale alla Salute"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/centrale" />
 
@@ -66,9 +77,12 @@
             android:id="@+id/menis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="12dp"
+            android:width="300dp"
             android:text="Farmacia Menis"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/internazionale_salute" />
 
@@ -76,9 +90,12 @@
             android:id="@+id/zamparo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="8dp"
+            android:width="300dp"
             android:text="Farmacia Zamparo"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menis" />
     </androidx.constraintlayout.widget.ConstraintLayout>
