@@ -4,20 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4C4A4A"
+    android:background="@drawable/blue_gradient"
     tools:context=".UploadPDF">
 
     <TextView
+        android:id="@+id/text_pdf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Upload PDF"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="40sp"
         android:layout_marginTop="20dp"
-        android:textColor="#FF9800"
-        android:id="@+id/text_pdf"
-    />
+        android:gravity="center"
+        android:text="Carica PDF"
+        android:textColor="@color/background_color"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tv_name"
@@ -34,24 +33,27 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/shape"
-            android:hint="Enter PDF File Name"
+            android:hint="Aggiungi nome del file PDF"
             android:textColor="#FF9800"
             android:textColorHint="@color/black"
             android:textSize="22sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/upload_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_name"
         android:layout_centerHorizontal="true"
-        android:layout_margin="90dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="90dp"
         android:backgroundTint="@color/black"
-        android:text="Upload PDF"
-        android:textColor="#FF9800"
+        android:padding="10dp"
+        android:text="Carica PDF"
+        android:textColor="@color/background_color"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:id="@+id/upload_btn"
-        android:padding="10dp"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -2,15 +2,13 @@ package com.example.portafgliomedico;
 
 import android.database.Cursor;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.portafgliomedico.ui.DBmanager;
 
@@ -96,12 +94,12 @@ public class NotificationFragment extends Fragment {
         listview.setText("Testo refreshed");
         Cursor res = db.getMemo();
         if(res.getCount()==0) {
-            listview.setText("No memos!");
+            listview.setText("Nessun promemoria salvato!");
             return;
         }
         StringBuffer buffer = new StringBuffer();
         while (res.moveToNext()){
-            buffer.append("->  ").append(res.getString(1)).append(". Due date: ").append(res.getString(0)).append("\n");
+            buffer.append("->  ").append(res.getString(1)).append(". Data: ").append(res.getString(0)).append("\n");
         }
         listview.setText(buffer);
     }

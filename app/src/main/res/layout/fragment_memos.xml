@@ -11,7 +11,7 @@
         android:id="@+id/dataTime"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:hint="Data di scadenza"
+        android:hint="Inserisci Data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="56dp"
-        android:hint="Text"
+        android:hint="Inserisci Promemoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +46,9 @@
 
     <Button
         android:id="@+id/addToDatabaseButton"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
-        android:text="@string/addToDatabaseButton"
+        android:text="Aggiungi"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +59,9 @@
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
-        android:text="Back"
+        android:text="Annulla"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -27,6 +27,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.portafgliomedico.databinding.ActivityMainBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     //number of select tab. We have 4 tabs so value must lie between 1-4 default value is 1
     private int selectedTab = 1;
     private String text_welcome;
-
+    private Map<String, Object> user = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,17 @@ public class MainActivity extends AppCompatActivity {
             alert.setTitle("Registrazione");
             alert.setMessage("Inserisci nome e cognome");
 
-// Set an EditText view to get user input
+            // Set an EditText view to get user input
             final EditText input = new EditText(this);
-            alert.setView(input);
+            input.setHint("Nome");
+            final EditText input2 = new EditText(this);
+            input2.setHint("Cognome");
+            // Set a layout to use 2 different input in AlertDialog
+            LinearLayout layout = new LinearLayout(getApplicationContext());
+            layout.setOrientation(LinearLayout.VERTICAL);
+            layout.addView(input);
+            layout.addView(input2);
+            alert.setView(layout);
 
             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 @SuppressLint("SetTextI18n")
@@ -75,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
             alert.show();
             SharedPreferences.Editor editor = prefs.edit();
+            user.put("Nome", "Filippo");
+            user.put("Cognome", "Tiozzo");
+            db.collection("utenti")
+                    .add(user);
             editor.putBoolean("firstTime", false);
             editor.commit();
         }
